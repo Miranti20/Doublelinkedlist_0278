@@ -33,34 +33,34 @@ public:
 
         if(START == NULL || nim <= START-> noMhs)
         {
-        if(START == NULL || nim <= START-> noMhs)
-        {
-            cout << "\nDuplicate number not allowed" << endl;
+            if(START == NULL || nim <= START-> noMhs)
+            {
+                cout << "\nDuplicate number not allowed" << endl;
+                return;
+            }
+
+            newNode-> next = START;
+
+            if (START != NULL)
+                START->prev = newNode;
+
+            newNode->prev = NULL;
+
+            START = newNode;
             return;
         }
 
-        newNode-> next = START;
+        Node *current = START;
+        while (current->next != NULL && current->next->noMhs < nim)
+        {
+            current = current->next;
+        }
 
-        if (START != NULL)
-            START->prev = newNode;
-
-        newNode->prev = NULL;
-
-        START = newNode;
-        return;
-    }
-
-    Node *current = START;
-    while (current->next != NULL && current->next->noMhs < nim)
-    {
-        current = current->next;
-    }
-
-    if (current->next != NULL && nim == current->next->noMhs)
-    {
+        if (current->next != NULL && nim == current->next->noMhs)
+        {
         cout << "\nDuplicate roll numbers not allowed" << endl;
-    return;
-    }
+        return;
+        }
 
 
         newNode->next = current->next; 
@@ -157,9 +157,10 @@ public:
             currentNode = currentNode->prev;
             i--;
         }
+        
     }
 
-    void searchData()
+     void searchData()
     {
         if (START == NULL)
         {
@@ -216,7 +217,7 @@ int main ()
             break;
             case '3': 
             list.traverse();
-            break; 
+            break;
             case '4': 
             list.revtraverse();
             break;
@@ -228,5 +229,10 @@ int main ()
             default:
             cout << "Inavlid option\n";
         }
-    }
+        cout << "\nPress Enter to continue...";
+        cin.ignore();
+        cin.get();
+        cout << endl;
+        system("clear");
+    }while (choice != '6');
 }
