@@ -172,6 +172,19 @@ public:
         cin >> rollNo;
 
         Node *current = START;
+
+        while (current != NULL && current->noMhs != rollNo)
+            current = current->next;
+
+        if (current == NULL)
+        {
+            cout << "Record not found";
+        }
+        else
+        {
+            cout << "Record found\n";
+            cout << "Roll Number: " << current->noMhs << endl;
+        }
     }
 
 
