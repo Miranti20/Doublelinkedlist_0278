@@ -131,4 +131,22 @@ public:
             i++;
         }
     }
+
+    void revtraverse()
+    {
+        if (START == NULL)
+        {
+            cout << "\nList is empty" << endl;
+            return;
+        }
+
+        Node *currentNode = START;
+
+        int i = 0;
+        while (currentNode != NULL)
+        {
+            currentNode = currentNode->next;
+            i++;
+        }
+    }
 };
