@@ -203,5 +203,20 @@ int main ()
         cout << "5. Search Record\n";
         cout << "6. exit\n";
         cout << "Enter your choice: ";
+
+        cin >> choice;
+
+        switch (choice)
+        {
+            case '1': 
+            list.addNode();
+            break;
+            case '2': 
+            list.hapus();
+            break;
+            case '3': 
+            list.traverse();
+            break; 
+        }
     }
 }
