@@ -186,6 +186,10 @@ public:
             cout << "Roll Number: " << current->noMhs << endl;
         }
     }
-
-
 };
+
+int main ()
+{
+    DoubleLinkedList list;
+    char choice;
+}
